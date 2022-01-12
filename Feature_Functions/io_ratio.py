@@ -1,3 +1,7 @@
+import numpy as np
+import pandas as pd
+
+
 def get_flow_in_out_ratio(trj_df,origin_label,destination_label):
     '''2
     @input:
