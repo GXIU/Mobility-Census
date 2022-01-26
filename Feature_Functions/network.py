@@ -14,8 +14,13 @@ def create_graph(trj_df, origin_label, destination_label):
     '''
     trj_df['weight'] = 1
     g = nx.DiGraph()
-    # print(trj_df[[origin_label, destination_label, 'weight']].values)
-    g.add_weighted_edges_from(trj_df[[origin_label, destination_label, 'weight']].values)
+    
+    grouped_df = trj_df[[origin_label, destination_label, 'weight']].fillna(0).groupby([origin_label, destination_label]).sum()
+    grouped_df = grouped_df.reset_index()
+    
+    # print(grouped_df.values)
+    g.add_weighted_edges_from(grouped_df.values)
+    
     return g
 
 
