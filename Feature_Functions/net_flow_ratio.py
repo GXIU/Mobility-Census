@@ -19,7 +19,7 @@ def get_net_flow_ratio(trj_df, origin_label, destination_label):
     in_flow = grouped_df[[destination_label, 'weight']].groupby(destination_label).sum().reset_index()
     ratio_df = out_flow.merge(right=in_flow, how='outer', left_on=origin_label, right_on=destination_label, suffixes=['_out', '_in']).fillna(0)
     ratio_df['location_id'] = ratio_df[['o_id', 'd_id']].max(axis=1).map(int)
-    ratio_df['net_flow_ratio'] = ratio_df['weight_in'] - ratio_df['weight_out'] / (ratio_df['weight_in'] + ratio_df['weight_out'])
+    ratio_df['net_flow_ratio'] = (ratio_df['weight_in'] - ratio_df['weight_out']) / (ratio_df['weight_in'] + ratio_df['weight_out'])
 
     return ratio_df[['location_id', 'net_flow_ratio']]
 
