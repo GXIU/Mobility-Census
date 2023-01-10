@@ -1,6 +1,6 @@
 # Mobility Census: New Framework for Comprehensive Human Mobility Analysis
 
-Gezhi Xiu, Jianying Wang, Thilo Gross, Meipo Kwan, and Yu Liu
+Gezhi Xiu, Jianying Wang, Thilo Gross, Meipo Kwan, Xia Peng and Yu Liu
 
 ## Abstract
 
