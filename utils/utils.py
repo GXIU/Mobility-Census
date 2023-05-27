@@ -1,6 +1,5 @@
 import os
 import argparse
-from itertools import combinations
 
 import contextily as cx
 import geopandas as gpd
@@ -11,8 +10,6 @@ import pandas as pd
 import scipy.sparse as ss
 import scipy.sparse.linalg as ssl
 import torch
-from matplotlib import cm
-from mpl_toolkits import mplot3d
 from torch import nn
 from tqdm import tqdm, trange
 
